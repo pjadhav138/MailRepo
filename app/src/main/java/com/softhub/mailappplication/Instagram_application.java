@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -21,17 +22,34 @@ public class Instagram_application extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.instagram);
-        ListView listView = findViewById(R.id.grid1);
+        GridView listView = findViewById(R.id.list2);
         imagelist = new ArrayList<>();
         imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image1));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+        imagelist.add(getResources().getDrawable(R.drawable.image_view));
+
         GridAdpter adpter = new GridAdpter(imagelist);
         listView.setAdapter(adpter);
     }
 
     class GridAdpter extends BaseAdapter{
+        List<Drawable>list1;
+        public GridAdpter(List<Drawable> imagelist) {
+            list1 = imagelist;
+
+        }
+
         @Override
         public int getCount() {
-            return 0;
+            return list1.size();
         }
 
         @Override
@@ -47,8 +65,8 @@ public class Instagram_application extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = LayoutInflater.from(Instagram_application.this).inflate(R.layout.image_grid_view,parent,false);
-            ImageView imageView = view.findViewById(R.drawable.image_view);
-            imageView.setImageDrawable(imagelist.get(9));
+            ImageView imageView = view.findViewById(R.id.image1);
+            imageView.setImageDrawable(list1.get(position));
             return view;
         }
     }
