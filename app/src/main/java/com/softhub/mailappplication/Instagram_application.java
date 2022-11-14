@@ -24,11 +24,6 @@ public class Instagram_application extends AppCompatActivity {
         ListView listView = findViewById(R.id.grid1);
         imagelist = new ArrayList<>();
         imagelist.add(getResources().getDrawable(R.drawable.image_view));
-
-
-
-
-
         GridAdpter adpter = new GridAdpter(imagelist);
         listView.setAdapter(adpter);
     }
