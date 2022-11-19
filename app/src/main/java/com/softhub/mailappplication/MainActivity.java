@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 Log.e("Mail",confirm);
-                Intent intent = new Intent(MainActivity.this,Mail_profile.class);
+                Intent intent = new Intent(MainActivity.this,Cross_check.class);
                 startActivity(intent);
 
 
