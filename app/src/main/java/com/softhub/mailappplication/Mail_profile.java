@@ -75,8 +75,6 @@ public class Mail_profile extends AppCompatActivity {
         name.setText(sharedPreferences.getString("name", null));
         last.setText(sharedPreferences.getString("lastname", null));
         username.setText(sharedPreferences.getString("username", null));
-
-
     }
 
     @Override
